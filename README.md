@@ -47,7 +47,7 @@ support/: Arquivos de suporte utilizados nos testes, como comandos personalizado
 - Instale as dependências do projeto utilizando o comando npm install.
 - Configure as variáveis de ambiente necessárias, como URLs de teste e credenciais de acesso, no arquivo cypress.json.
 
-#Executando os Testes
+# Executando os Testes
 
 Para executar os testes, utilize o seguinte comando (modo headless):
 
