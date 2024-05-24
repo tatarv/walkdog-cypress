@@ -31,7 +31,7 @@ support/: Arquivos de suporte utilizados nos testes, como comandos personalizado
 # Casos de Teste
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/tatarv/walkdog-cypress/blob/main/Mind%20Map%20-%20Walkdog.jpg">
 </p>
 
 # Pré-requisitos
