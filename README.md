@@ -23,10 +23,10 @@ O escopo do projeto de automação abrange as seguintes áreas:
 
 A estrutura do projeto está organizada da seguinte forma:
 
-cypress/: Contém todos os arquivos relacionados aos testes Cypress.
-fixtures/: Arquivos de dados estáticos utilizados nos testes.
-e2e/: Suítes de testes organizadas por funcionalidade
-support/: Arquivos de suporte utilizados nos testes, como comandos personalizados e configurações globais.
+- cypress/: Contém todos os arquivos relacionados aos testes Cypress.
+- fixtures/: Arquivos de dados estáticos utilizados nos testes.
+- e2e/: Suítes de testes organizadas por funcionalidade
+- support/: Arquivos de suporte utilizados nos testes, como comandos personalizados e configurações globais.
 
 # Casos de Teste
 
@@ -49,11 +49,11 @@ support/: Arquivos de suporte utilizados nos testes, como comandos personalizado
 
 # Executando os Testes
 
-Para executar os testes, utilize o seguinte comando (modo headless):
+- Para executar os testes, utilize o seguinte comando (modo headless):
 
 npm run cy:run
 
-Para executar os testes no modo interativo (com interface gráfica do Cypress), utilize o seguinte comando:
+- Para executar os testes no modo interativo (com interface gráfica do Cypress), utilize o seguinte comando:
 
 npm run cy:open
 
