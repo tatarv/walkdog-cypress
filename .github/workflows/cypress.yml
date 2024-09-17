@@ -3,8 +3,8 @@ name: Cypress Tests - Daily Schedule
 # Definindo o gatilho de agendamento
 on:
   schedule:
-    # Agendado para executar todos os dias às 23:00 (UTC)
-    - cron: '0 23 * * *'
+    # Agendado para executar todos os dias às 22:00 (UTC)
+    - cron: '0 22 * * *'
 
 jobs:
   cypress-run:
