@@ -1,0 +1,46 @@
+name: Cypress Tests - Daily Schedule
+
+# Definindo o gatilho de agendamento
+on:
+  schedule:
+    # Agendado para executar todos os dias às 23:00 (UTC)
+    - cron: '0 23 * * *'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest  # O job será executado em uma máquina virtual Linux Ubuntu
+
+    steps:
+      # Step 1: Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Configuração do Node.js (dependência do Cypress)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Versão do Node.js que o Cypress suporta
+
+      # Step 3: Instalar as dependências do projeto
+      - name: Install dependencies
+        run: npm install  # Comando que instala as dependências no arquivo package.json
+
+      # Step 4: Executar os testes do Cypress
+      - name: Run Cypress tests
+        run: npm run test  # Você pode usar o comando que roda seus testes Cypress
+
+      # Opcional: Gerar relatórios de falhas com Cypress (caso tenha)
+      - name: Upload Cypress videos and screenshots on failure
+        if: failure()  # Somente será executado se houver falha nos testes
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      # Opcional: Upload de screenshots
+      - name: Upload Cypress screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
