@@ -4,7 +4,7 @@ name: Cypress Tests - Daily Schedule
 on:
   schedule:
     # Agendado para executar todos os dias às 22:00 (UTC)
-    - cron: '0 22 * * *'
+    - cron: '8 23 * * *'
 
 jobs:
   cypress-run:
