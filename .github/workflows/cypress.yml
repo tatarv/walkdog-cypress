@@ -12,13 +12,11 @@ jobs:
     steps:
       # Step 1: Checkout do código
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Atualizado para v3, usa Node.js 16+
 
       # Step 2: Configuração do Node.js (dependência do Cypress)
       - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+        uses: actions/setup-node@v3  # Já está na versão mais recente que usa Node.js 16+
 
       # Step 3: Instalar as dependências do projeto
       - name: Install dependencies
@@ -31,7 +29,7 @@ jobs:
       # Step 5: Upload de vídeos em caso de falha nos testes
       - name: Upload Cypress videos and screenshots on failure
         if: failure()
-        uses: actions/upload-artifact@v3  # Atualizado para v3
+        uses: actions/upload-artifact@v3  # Já está atualizado para v3, usa Node.js 16+
         with:
           name: cypress-videos
           path: cypress/videos
@@ -39,7 +37,7 @@ jobs:
       # Step 6: Upload de screenshots em caso de falha nos testes
       - name: Upload Cypress screenshots on failure
         if: failure()
-        uses: actions/upload-artifact@v3  # Atualizado para v3
+        uses: actions/upload-artifact@v3  # Já atualizado para v3
         with:
           name: cypress-screenshots
           path: cypress/screenshots
